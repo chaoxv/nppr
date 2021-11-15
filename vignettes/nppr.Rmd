@@ -1,0 +1,40 @@
+---
+title: "nppr"
+author: Chao Xu
+date: 2021-11-15
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{nppr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# An example for geom_oce()
+```{r setup, fig.width = 7.5, fig.height = 7.5, warning = FALSE, message = FALSE}
+
+library(nppr)
+library(tidyverse)
+library(ggspatial)
+library(rnaturalearth)
+library(rnaturalearthdata)
+data(nppdata)
+
+ggplot()+
+  geom_oce(nppdata, aes(x = lon, y = lat, fill = npp), lonlim = c(100, 120), latlim = c(7, 25))+
+  scale_fill_gradientn(colors = rainbow(20), breaks = seq(200, 1000, 100), limits = c(200, 1000))+
+  labs(x = 'Longitude', y = 'Latitude', fill = expression(NPP*~'('*mg~C~m^-2~d^-1*')'))
+
+```
+
+
+
+
+
+
