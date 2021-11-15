@@ -21,8 +21,8 @@
 
 match_df <- function(data, file.path){
 
-  mydata <- data %>% group_by(date) %>% nest() %>% mutate(var = map(data, ~match_sig(.))) %>%
-    unnest(c(date, var)) %>% select(date, var)
+  mydata <- data %>% group_by(date) %>%
+    mutate(var = match_sig(file.path = file.path, lon = lon, lat = lat, date = date))
 
 return(mydata)
 
