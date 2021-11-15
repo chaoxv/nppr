@@ -2,7 +2,6 @@
 #'
 #' @title read_hdf
 #' @param file.path The file path of which one you want to import.
-#' @param var The variable in the file. The default is 'npp'.
 #' @importFrom raster raster
 #'
 #' @return A data frame
@@ -15,7 +14,7 @@
 #' read_hdf(data, file.path = 'C:\\Users\\xucha\\Desktop\\DATA\\cbpm.201506.hdf')
 #' }
 
-read_hdf <- function(file.path, var = 'npp'){
+read_hdf <- function(file.path){
 
   ori_data <- raster(file.path)
 
@@ -23,7 +22,7 @@ read_hdf <- function(file.path, var = 'npp'){
 
   projection(ori_data) <- '+init=epsg:4326'
 
-  names(ori_data) <- var
+  names(ori_data) <- 'var'
 
   ori_data[ori_data == -9999] <- NA
 
