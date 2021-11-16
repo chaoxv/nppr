@@ -8,7 +8,6 @@ get_npp_eppley(
   file.path,
   grid.size = "low",
   time.span = "monthly",
-  file.format = "hdf",
   satellite = "MODIS",
   mindate,
   maxdate

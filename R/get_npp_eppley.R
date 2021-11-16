@@ -32,7 +32,6 @@
 get_npp_eppley <- function(file.path,
                           grid.size = 'low',
                           time.span = 'monthly',
-                          file.format = 'hdf',
                           satellite = 'MODIS',
                           mindate,
                           maxdate){
@@ -40,7 +39,7 @@ get_npp_eppley <- function(file.path,
   grid <- if_else(grid.size == 'high', '2x4/', '1x2/')
   time <- if_else(time.span == 'dayly', '8day/', 'monthly/')
   format <- 'hdf/'
-  sate <- if_else(satellite == 'MODIS', 'eppley.r2018.m.chl.m.sst',
+  sate <- if_else(satellite == 'MODIS', 'eppley.r2018.m.chl.m.sst/',
                   if_else(satellite == 'VIIRS', 'eppley.r2018.v.chl.v.sst/', NULL))
 
   path <- paste0('orca.science.oregonstate.edu/data/', grid, time, sate, format)
