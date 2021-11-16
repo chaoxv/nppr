@@ -4,12 +4,10 @@
 \alias{read_hdf}
 \title{read_hdf}
 \usage{
-read_hdf(file.path, var = "npp")
+read_hdf(file.path)
 }
 \arguments{
 \item{file.path}{The file path of which one you want to import.}
-
-\item{var}{The variable in the file. The default is 'npp'.}
 }
 \value{
 A data frame

@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 ```{r setup, fig.width = 7.5, fig.height = 7.5, warning = FALSE, message = FALSE}
 
 library(nppr)
-library(tidyverse)
+library(ggplot2)
 library(ggspatial)
 library(rnaturalearth)
 library(rnaturalearthdata)

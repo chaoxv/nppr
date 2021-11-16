@@ -4,17 +4,20 @@
 \name{nppdata}
 \alias{nppdata}
 \title{Test data for geom_oce()}
-\format{An object of class \code{"data.frame"}
+\format{
+An object of class \code{"data.frame"}
 \describe{
 \item{lon}{lontitude}
 \item{lat}{latitude}
 \item{npp}{net primary prodution(units: mg C m^-2 d^-1)}
-}}
+}
+}
 \usage{
 data(nppdata)
 }
 \description{
-This data set contain the net primary production data of VGPM model in January 2021.
+This data set contain the net primary production data of South China Sea by
+VGPM model in January 2021.
 }
 \examples{
 

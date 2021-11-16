@@ -1,6 +1,7 @@
 #' Test data for geom_oce()
 #'
-#' This data set contain the net primary production data of VGPM model in January 2021.
+#' This data set contain the net primary production data of South China Sea by
+#' VGPM model in January 2021.
 #'
 #' @docType data
 #'

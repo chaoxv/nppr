@@ -6,10 +6,7 @@
 \alias{nppr-package}
 \title{nppr: 'nppr' is an R package for ocean productivity data downloading, reading, processing and ocean data visualization}
 \description{
-This package is used for ocean productivity data downloading, reading, 
-    processing and ocean data visualization. 
-    All data are available from http://sites.science.oregonstate.edu/ocean.productivity/index.php
-    or http://orca.science.oregonstate.edu/data
+This package is used for ocean productivity data downloading, reading, processing and ocean data visualization. All data are available from http://sites.science.oregonstate.edu/ocean.productivity/index.php or http://orca.science.oregonstate.edu/data.
 }
 \seealso{
 Useful links:

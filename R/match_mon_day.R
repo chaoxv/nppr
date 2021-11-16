@@ -18,8 +18,8 @@
 #' # Your data must contain both 'date' and 'month' variables
 #' mydata %>% mutate(month = as.yearmon(format(date, '%Y-%m'))) %>% # create 'month' variable
 #' group_by(month) %>% nest() %>%
-#' mutate(npp = map(data, ~match_mon_day(data, file.path = 'C:\\Users\\xucha\\Desktop\\DATA'))) %>%
-#' unnest(npp) %>% select(date, npp))
+#' mutate(var = map(data, ~match_mon_day(data, file.path = 'C:\\Users\\xucha\\Desktop\\DATA'))) %>%
+#' unnest(var) %>% select(date, var))
 #' }
 
 match_mon_day <- function(data, file.path){
@@ -41,24 +41,24 @@ match_mon_day <- function(data, file.path){
     filename <- paste0(file.path, '/', newday, '.hdf')
   }
 
-  npp_data <- read_hdf(filename)
+  new_data <- read_hdf(filename)
 
   match_sig_month <- function(data){
 
   lon1 <- unique(data$lon)
   lat1 <- unique(data$lat)
 
-  lat2 <- min(npp_data$lat[npp_data$lat >= lat1])
-  lon2 <- min(npp_data$lon[npp_data$lon >= lon1])
+  lat2 <- min(new_data$lat[new_data$lat >= lat1])
+  lon2 <- min(new_data$lon[new_data$lon >= lon1])
 
-  npp <- filter(npp_data, lat == lat2 & lon == lon2)$npp
+  var <- filter(new_data, lat == lat2 & lon == lon2)$var
 
-  return(npp)
+  return(var)
 
 }
 
-  mydata1 <- data %>% group_by(date) %>% nest() %>% mutate(npp = map(data, ~match_sig_month(.))) %>%
-    unnest(c(date, npp)) %>% select(date, npp)
+  mydata1 <- data %>% group_by(date) %>% nest() %>% mutate(var = map(data, ~match_sig_month(.))) %>%
+    unnest(c(date, var)) %>% select(date, var)
 
 return(mydata1)
 
