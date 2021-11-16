@@ -69,7 +69,7 @@ get_npp_cafe <- function(file.path,
     filter(. > 3000) %>% rename(name = '.') %>%
     filter(name >= min_date & name <= max_date) %>%
     group_by(name) %>%
-    mutate(name1 = paste0('cbpm.', name, '.hdf', '.gz'),
+    mutate(name1 = paste0('cafe.', name, '.hdf', '.gz'),
            dowopath = paste0('http://', path, name1),
            savepath = paste0(file.path, '/', name1))
 

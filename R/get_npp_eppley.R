@@ -10,7 +10,6 @@
 #' 'low'(default): 2160x1080, 'high': 2160x4320.
 #' @param time.span The time span of npp data. There are two time spans:
 #'  'monthly' represent monthly npp data. 'dayly' represent 8 days data.
-#' @param file.format For VGPM model, there are two file formats can be choosed, 'xyz' and 'hdf'. For Eppley-VGPM, CBPM and CAFE, only 'hdf' format can be choosed.
 #' @param satellite Choose satellites, 'MODIS', 'VIIRS', and 'SeaWiFS'. The default is 'MODIS'.
 #' @param mindate The minimum date of data you want to download.
 #' @param maxdate The maximum date of data you want to download.
@@ -40,7 +39,7 @@ get_npp_eppley <- function(file.path,
 
   grid <- if_else(grid.size == 'high', '2x4/', '1x2/')
   time <- if_else(time.span == 'dayly', '8day/', 'monthly/')
-  format <- if_else(file.format == 'hdf', 'hdf/', 'xyz/')
+  format <- 'hdf/'
   sate <- if_else(satellite == 'MODIS', 'eppley.r2018.m.chl.m.sst',
                   if_else(satellite == 'VIIRS', 'eppley.r2018.v.chl.v.sst/', NULL))
 
@@ -71,7 +70,7 @@ get_npp_eppley <- function(file.path,
     filter(. > 3000) %>% rename(name = '.') %>%
     filter(name >= min_date & name <= max_date) %>%
     group_by(name) %>%
-    mutate(name1 = paste0('eppley.', name, '.', file.format, '.gz'),
+    mutate(name1 = paste0('eppley.', name, '.hdf', '.gz'),
            dowopath = paste0('http://', path, name1),
            savepath = paste0(file.path, '/', name1))
 

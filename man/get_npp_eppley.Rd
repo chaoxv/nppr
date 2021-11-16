@@ -24,8 +24,6 @@ save your file (avoid Chinese characters).}
 \item{time.span}{The time span of npp data. There are two time spans:
 'monthly' represent monthly npp data. 'dayly' represent 8 days data.}
 
-\item{file.format}{For VGPM model, there are two file formats can be choosed, 'xyz' and 'hdf'. For Eppley-VGPM, CBPM and CAFE, only 'hdf' format can be choosed.}
-
 \item{satellite}{Choose satellites, 'MODIS', 'VIIRS', and 'SeaWiFS'. The default is 'MODIS'.}
 
 \item{mindate}{The minimum date of data you want to download.}
