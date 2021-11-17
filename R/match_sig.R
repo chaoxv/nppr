@@ -32,8 +32,8 @@ match_sig <- function(file.path,
 
   day <- yday(date)
 
-  new_day <- ifelse(day >= 100, day, ifelse(day >=10 & day < 100,
-                                                       paste0('0', day), paste0('00', day)))
+  new_day <- ifelse(day >= 100, day,
+                    ifelse(day >=10 & day < 100, paste0('0', day), paste0('00', day)))
 
   month1 <- ifelse(month >= 10, month, paste0('0', month))
 
@@ -44,7 +44,7 @@ match_sig <- function(file.path,
 
   if(time.span == 'dayly'){
 
-    filename <- paste0(file.path, '/', newday, '.hdf')
+    filename <- paste0(file.path, '/', .data$newday, '.hdf')
   }
 
   new_data <- read_hdf(filename)

@@ -70,8 +70,8 @@ get_npp_cafe <- function(file.path,
     filter(name >= min_date & name <= max_date) %>%
     group_by(name) %>%
     mutate(name1 = paste0('cafe.', name, '.hdf', '.gz'),
-           dowopath = paste0('http://', path, name1),
-           savepath = paste0(file.path, '/', name1))
+           dowopath = paste0('http://', path, .data$name1),
+           savepath = paste0(file.path, '/', .data$name1))
 
     name %>% pwalk(~download.file(..3, destfile = ..4))
 

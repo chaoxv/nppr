@@ -3,6 +3,8 @@
 #' @title read_hdf
 #' @param file.path The file path of which one you want to import.
 #' @importFrom raster raster
+#' @importFrom raster extent
+#' @importFrom raster projection
 #'
 #' @return A data frame
 #' @export
@@ -18,9 +20,9 @@ read_hdf <- function(file.path){
 
   ori_data <- raster(file.path)
 
-  extent(ori_data) <- c(xmin = -180, xmax = 180, ymin = -90, ymax = 90)
+  raster::extent(ori_data) <- c(xmin = -180, xmax = 180, ymin = -90, ymax = 90)
 
-  projection(ori_data) <- '+init=epsg:4326'
+  raster::projection(ori_data) <- '+init=epsg:4326'
 
   names(ori_data) <- 'var'
 
@@ -30,9 +32,9 @@ read_hdf <- function(file.path){
 
     na.omit() %>%
 
-    mutate(lon = round(x, 2), lat = round(y, 2)) %>%
+    mutate(lon = round(.data$x, 2), lat = round(.data$y, 2)) %>%
 
-    select(lon, lat, var)
+    select(.data$lon, .data$lat, .data$var)
 
   return(new_data)
 

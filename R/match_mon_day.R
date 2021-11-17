@@ -4,6 +4,8 @@
 #' @title match_mon_day
 #' @param data Your npp data, it can be a data frame or a tribble.
 #' @param file.path The folder path where the npp data seved.
+#' @param time.span The time span of npp data. There two time spans: 'monthly' represent monthly npp data.
+#' 'dayly' represent 8 days data. The default is 'monthly'.
 #' @importFrom tidyr unnest
 #' @note This function should only be used when you have the 'month' variable.
 #' Any other time, match_sig should be used. Please see examples.
@@ -22,7 +24,9 @@
 #' unnest(var) %>% select(date, var))
 #' }
 
-match_mon_day <- function(data, file.path){
+match_mon_day <- function(data,
+                          file.path,
+                          time.span = 'monthly'){
 
   year <- unique(data$year)
   month <- unique(data$month)
@@ -38,12 +42,15 @@ match_mon_day <- function(data, file.path){
   }
 
   if(time.span == 'dayly'){
-    filename <- paste0(file.path, '/', newday, '.hdf')
+    filename <- paste0(file.path, '/', .data$newday, '.hdf')
   }
 
   new_data <- read_hdf(filename)
 
-  match_sig_month <- function(data){
+  match_sig_month <- function(data,
+                              lon = NULL,
+                              lat = NULL,
+                              var = NULL){
 
   lon1 <- unique(data$lon)
   lat1 <- unique(data$lat)
@@ -58,7 +65,7 @@ match_mon_day <- function(data, file.path){
 }
 
   mydata1 <- data %>% group_by(date) %>% nest() %>% mutate(var = map(data, ~match_sig_month(.))) %>%
-    unnest(c(date, var)) %>% select(date, var)
+    unnest(c(date, .data$var)) %>% select(date, .data$var)
 
 return(mydata1)
 

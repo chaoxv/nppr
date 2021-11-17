@@ -66,12 +66,12 @@ get_chla <- function(file.path,
 
   name <- filename %>% str_extract('[[:digit:]]+') %>%
     as.numeric() %>% as.data.frame() %>% na.omit() %>%
-    filter(. > 3000) %>% rename(name = '.') %>%
+    rename(name = '.') %>% filter(name > 3000) %>%
     filter(name >= min_date & name <= max_date) %>%
     group_by(name) %>%
     mutate(name1 = paste0('chl.', name, '.hdf', '.gz'),
-           dowopath = paste0('http://', path, name1),
-           savepath = paste0(file.path, '/', name1))
+           dowopath = paste0('http://', path, .data$name1),
+           savepath = paste0(file.path, '/', .data$name1))
 
     name %>% pwalk(~download.file(..3, destfile = ..4))
 

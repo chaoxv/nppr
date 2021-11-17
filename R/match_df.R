@@ -4,6 +4,8 @@
 #' @title match_df
 #' @param data Your npp data, it can be a data frame or a tribble.
 #' @param file.path The folder path where the npp data seved.
+#' @param lon lon of match_sig
+#' @param lat lat of match_sig
 #' @importFrom tidyr unnest
 #' @note The different between match_sig and match_df is that the input of match_sig is a value and
 #' the input of match_df is a data frame.
@@ -19,10 +21,13 @@
 #' match_df(mydata, file.path = 'C:\\Users\\xucha\\Desktop\\DATA')
 #' }
 
-match_df <- function(data, file.path){
+match_df <- function(data,
+                     file.path,
+                     lon = NULL,
+                     lat = NULL){
 
   mydata <- data %>% group_by(date) %>%
-    mutate(var = match_sig(file.path = file.path, lon = lon, lat = lat, date = date))
+    mutate(var = match_sig(file.path = file.path, lon = .data$lon, lat = .data$lat, date = date))
 
 return(mydata)
 

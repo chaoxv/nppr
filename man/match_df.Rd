@@ -4,12 +4,16 @@
 \alias{match_df}
 \title{match_df}
 \usage{
-match_df(data, file.path)
+match_df(data, file.path, lon = NULL, lat = NULL)
 }
 \arguments{
 \item{data}{Your npp data, it can be a data frame or a tribble.}
 
 \item{file.path}{The folder path where the npp data seved.}
+
+\item{lon}{lon of match_sig}
+
+\item{lat}{lat of match_sig}
 }
 \value{
 A data frame

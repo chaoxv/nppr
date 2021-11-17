@@ -4,12 +4,15 @@
 \alias{match_mon_day}
 \title{match_mon_day}
 \usage{
-match_mon_day(data, file.path)
+match_mon_day(data, file.path, time.span = "monthly")
 }
 \arguments{
 \item{data}{Your npp data, it can be a data frame or a tribble.}
 
 \item{file.path}{The folder path where the npp data seved.}
+
+\item{time.span}{The time span of npp data. There two time spans: 'monthly' represent monthly npp data.
+'dayly' represent 8 days data. The default is 'monthly'.}
 }
 \value{
 A data frame
