@@ -4,9 +4,9 @@
 \name{nppr-package}
 \alias{nppr}
 \alias{nppr-package}
-\title{nppr: Ocean productivity data downloading, reading, processing and visualization}
+\title{nppr: Tools for Ocean Productivity Data Downloading, Reading, Processing and Visualization}
 \description{
-This package is used for ocean productivity data downloading, reading, processing and ocean data visualization. All data are available from <http://sites.science.oregonstate.edu/ocean.productivity/index.php> or <http://orca.science.oregonstate.edu/data>.
+This package is used for ocean productivity data downloading, reading, processing and ocean data visualization. All data are available from <http://sites.science.oregonstate.edu/ocean.productivity/index.php>.
 }
 \seealso{
 Useful links:
