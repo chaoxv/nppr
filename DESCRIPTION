@@ -1,10 +1,9 @@
 Package: nppr
-Title: Tools for Ocean Productivity Data Downloading, Reading, Processing and Visualization
+Title: Tools for Ocean Productivity Data Download, Read, Process and Visualization
 Version: 1.0
-Author: Chao Xu
-Maintainer: Chao Xu <xuchao3091@live.com>
-Description: This package is used for ocean productivity data downloading,
-    reading, processing and ocean data visualization.  All data are available from
+Authors@R: c(person("Chao", "Xu", email = "xuchao3091@live.com", role = c("aut", "cre")))
+Description: Tools for ocean productivity data download,
+    read, process and visualization.  All data are available from
     <http://sites.science.oregonstate.edu/ocean.productivity/index.php>.
 License: GPL-3
 URL: https://github.com/chaoxv/nppr
@@ -30,8 +29,6 @@ Suggests:
     knitr,
     rmarkdown,
     testthat
-VignetteBuilder: 
-    knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

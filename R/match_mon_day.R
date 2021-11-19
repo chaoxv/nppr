@@ -3,8 +3,8 @@
 #'
 #' @title match_mon_day
 #' @param data Your npp data, it can be a data frame or a tribble.
-#' @param file.path The folder path where the npp data seved.
-#' @param time.span The time span of npp data. There two time spans: 'monthly' represent monthly npp data.
+#' @param file.path The folder path where the ocean productivity data saved.
+#' @param time.span The time span of your data. There two time spans: 'monthly' represent monthly data.
 #' 'dayly' represent 8 days data. The default is 'monthly'.
 #' @importFrom tidyr unnest
 #' @note This function should only be used when you have the 'month' variable.

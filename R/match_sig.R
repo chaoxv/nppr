@@ -2,11 +2,11 @@
 #' by your longitude, latitude and date
 #'
 #' @title match_sig
-#' @param file.path The folder path where the ocean productivity data seved.
+#' @param file.path The folder path where the ocean productivity data saved.
 #' @param lon Your longitude.
 #' @param lat Your latitude.
 #' @param date Your date.
-#' @param time.span The time span of npp data. There two time spans: 'monthly' represent monthly npp data.
+#' @param time.span The time span of your data. There two time spans: 'monthly' represent monthly data.
 #' 'dayly' represent 8 days data. The default is 'monthly'.
 #'
 #' @return A value

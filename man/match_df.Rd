@@ -7,9 +7,9 @@
 match_df(data, file.path, lon = NULL, lat = NULL)
 }
 \arguments{
-\item{data}{Your npp data, it can be a data frame or a tribble.}
+\item{data}{Your data, it should be a data frame or a tribble.}
 
-\item{file.path}{The folder path where the npp data seved.}
+\item{file.path}{The folder path where the ocean productivity data saved.}
 
 \item{lon}{lon of match_sig}
 

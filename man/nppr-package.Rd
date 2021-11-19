@@ -4,15 +4,19 @@
 \name{nppr-package}
 \alias{nppr}
 \alias{nppr-package}
-\title{nppr: Tools for Ocean Productivity Data Downloading, Reading, Processing and Visualization}
+\title{nppr: Tools for Ocean Productivity Data Download, Read, Process and Visualization}
 \description{
-This package is used for ocean productivity data downloading, reading, processing and ocean data visualization. All data are available from <http://sites.science.oregonstate.edu/ocean.productivity/index.php>.
+Tools for ocean productivity data download, read, process and visualization. All data are available from <http://sites.science.oregonstate.edu/ocean.productivity/index.php>.
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://github.com/chaoxv/nppr}
 }
+
+}
+\author{
+\strong{Maintainer}: Chao Xu \email{xuchao3091@live.com}
 
 }
 \keyword{internal}

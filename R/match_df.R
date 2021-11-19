@@ -2,8 +2,8 @@
 #' by your longitude, latitude and date
 #'
 #' @title match_df
-#' @param data Your npp data, it can be a data frame or a tribble.
-#' @param file.path The folder path where the npp data seved.
+#' @param data Your data, it should be a data frame or a tribble.
+#' @param file.path The folder path where the ocean productivity data saved.
 #' @param lon lon of match_sig
 #' @param lat lat of match_sig
 #' @importFrom tidyr unnest

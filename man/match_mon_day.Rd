@@ -9,9 +9,9 @@ match_mon_day(data, file.path, time.span = "monthly")
 \arguments{
 \item{data}{Your npp data, it can be a data frame or a tribble.}
 
-\item{file.path}{The folder path where the npp data seved.}
+\item{file.path}{The folder path where the ocean productivity data saved.}
 
-\item{time.span}{The time span of npp data. There two time spans: 'monthly' represent monthly npp data.
+\item{time.span}{The time span of your data. There two time spans: 'monthly' represent monthly data.
 'dayly' represent 8 days data. The default is 'monthly'.}
 }
 \value{

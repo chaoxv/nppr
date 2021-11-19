@@ -7,7 +7,7 @@
 match_sig(file.path, lon, lat, date, time.span = "monthly")
 }
 \arguments{
-\item{file.path}{The folder path where the ocean productivity data seved.}
+\item{file.path}{The folder path where the ocean productivity data saved.}
 
 \item{lon}{Your longitude.}
 
@@ -15,7 +15,7 @@ match_sig(file.path, lon, lat, date, time.span = "monthly")
 
 \item{date}{Your date.}
 
-\item{time.span}{The time span of npp data. There two time spans: 'monthly' represent monthly npp data.
+\item{time.span}{The time span of your data. There two time spans: 'monthly' represent monthly data.
 'dayly' represent 8 days data. The default is 'monthly'.}
 }
 \value{
