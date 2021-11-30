@@ -13,7 +13,7 @@
 #' library(nppr)
 #' library(raster)
 #' librray(tidyverse)
-#' read_hdf(data, file.path = 'C:\\Users\\xucha\\Desktop\\DATA\\cbpm.201506.hdf')
+#' read_hdf(file.path = 'C:\\Users\\xucha\\Desktop\\DATA\\cbpm.201506.hdf')
 #' }
 
 read_hdf <- function(file.path){
@@ -32,10 +32,11 @@ read_hdf <- function(file.path){
 
     na.omit() %>%
 
-    mutate(lon = round(.data$x, 2), lat = round(.data$y, 2)) %>%
+    mutate(lon = .data$x, lat = .data$y) %>%
 
     select(.data$lon, .data$lat, .data$var)
 
   return(new_data)
 
 }
+

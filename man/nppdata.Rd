@@ -17,7 +17,7 @@ data(nppdata)
 }
 \description{
 This data set contain the net primary production data of South China Sea by
-VGPM model in January 2021.
+CBPM model in Feb 2016.
 }
 \examples{
 

@@ -20,6 +20,6 @@ read_hdf() can be used to read the ocean productivity(npp, sst, chl and par) hdf
 library(nppr)
 library(raster)
 librray(tidyverse)
-read_hdf(data, file.path = 'C:\\\\Users\\\\xucha\\\\Desktop\\\\DATA\\\\cbpm.201506.hdf')
+read_hdf(file.path = 'C:\\\\Users\\\\xucha\\\\Desktop\\\\DATA\\\\cbpm.201506.hdf')
 }
 }
