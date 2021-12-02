@@ -1,35 +1,21 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
-
 # nppr
 
-<img src="https://github.com/chaoxv/figures/blob/main/nppr.png?raw=true" height="200" align="right" /></a>
+<img src="https://raw.githubusercontent.com/chaoxv/figures/main/nppr.png" height="200" align="right" /></a>
 
 <!-- badges: end -->
 
-```{r comment="", echo=FALSE, results='asis'}
-cat(packageDescription('nppr')$Description)
-```
-
+Tools for ocean productivity data downloading, reading, processing and
+visualization. All data are available from
+<http://sites.science.oregonstate.edu/ocean.productivity/index.php>.
 
 ## :writing_hand: Authors
 
 Chao Xu
 
 Xiamen University
-
 
 ## Installation
 
@@ -44,13 +30,13 @@ remotes::install_github("chaoxv/nppr")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+``` r
 library(nppr)
 ```
 
-1. Download ocean productivity data
+1.  Download ocean productivity data
 
-```{r eval=FALSE}
+``` r
 # Load supporting packages
 library(RCurl)
 library(XML)
@@ -69,23 +55,20 @@ get_npp_vgpm(file.path = yourfolder,
              satellite = 'MODIS',
              mindate = '2016-01-15', 
              maxdate = '2016-03-15') 
-
 ```
 
+2.  Read hdf file
 
-2. Read hdf file
-
-```{r eval=FALSE}
+``` r
 # Use the hdf file you have downloaded yet.
 yourfile <- paste0(yourfolder, '/201601.vgpm')
 read_hdf(file.path = yourfile)    
-
 ```
 
-3. Match the ocean productivity data by your longitude, latitude and date.
+3.  Match the ocean productivity data by your longitude, latitude and
+    date.
 
-```{r eval=FALSE}
-
+``` r
 # Extract a single value
 match_sig(file.path = yourfolder,
           lon = 120, lat = 20, date = '2016-03-01')
@@ -96,16 +79,17 @@ mydat <- data.frame(lon = c(120, 112, 116),
                     date = c('2016-03-04', '2016-03-07', '2016-02-04'))
 
 match_df(mydat, file.path = yourfolder)  
-
 ```
 
-4. Ocean productivity data visualization.
+4.  Ocean productivity data visualization.
 
-```{r fig.dim = c(7.5, 7.5), warning=FALSE}
+``` r
 # Load supporting packages
 
 library(viridis)
+#> 载入需要的程辑包：viridisLite
 library(raster)
+#> 载入需要的程辑包：sp
 library(ggplot2)
 library(ggspatial)
 library(rnaturalearth)
@@ -121,10 +105,13 @@ data(nppdata)
                      limits = c(50, 1050))+
   labs(x = 'Longitude', y = 'Latitude',
   fill = expression(NPP*~'('*mg~C~m^-2~d^-1*')'))
-
+#> Scale on map varies by more than 10%, scale bar may be inaccurate
 ```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 ## :sparkling_heart: Contributing
 
-We welcome any contributions! By participating in this project you agree to
-abide by the terms outlined in the [Contributor Code of Conduct](CONDUCT.md).
+We welcome any contributions! By participating in this project you agree
+to abide by the terms outlined in the [Contributor Code of
+Conduct](CONDUCT.md).

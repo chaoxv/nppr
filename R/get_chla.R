@@ -50,13 +50,13 @@ get_chla <- function(file.path,
   maxyear <- year(maxdate)
 
   if(time.span == 'monthly'){
-    minday <- yday(mindate)
-    maxday <- yday(maxdate) + 31
+    minday <- ifelse(yday(mindate) < 32, 1, yday(mindate) - 30)
+    maxday <- yday(maxdate)
   }
 
   if(time.span == 'dayly'){
-    minday <- yday(mindate)
-    maxday <- yday(maxdate) + 10
+    minday <- ifelse(yday(mindate) < 9, 1, yday(mindate) - 8)
+    maxday <- yday(maxdate)
   }
 
   min_date <- as.numeric(ifelse(minday < 10, paste0(minyear, '00', minday),
