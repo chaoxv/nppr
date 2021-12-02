@@ -1,0 +1,99 @@
+---
+output:
+  md_document:
+    variant: gfm
+html_preview: false
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+
+#  nppr: An R package for ocean productivity data automatically downloading, reading, processing and  visualization
+
+```{r echo=FALSE, results="hide", message=FALSE}
+library("badger")
+library("ypages")
+Biocpkg <- function (pkg) {
+    sprintf("[%s](http://bioconductor.org/packages/%s)", pkg, pkg)
+}
+```
+
+<img src="https://github.com/chaoxv/figures/blob/main/nppr.png" height="200" align="right" /></a>
+
+`r badge_bioc_release("nppr", "green")`
+`r badge_devel("chaoxv/nppr", "green")`
+`r badge_bioc_download("nppr", "total", "blue")`
+`r badge_bioc_download("nppr", "month", "blue")`
+`r badge_bioc_download_rank("nppr")`
+
+
+
+```{r comment="", echo=FALSE, results='asis'}
+cat(packageDescription('nppr')$Description)
+```
+
+`r badger::badge_custom("follow me on", "WeChat", "green", "https://github.com/chaoxv/figures/blob/main/wechat.jpg")`
+
+
+## :writing_hand: Authors
+
+Chao Xu
+
+Xiamen University
+
+If you use `nppr` in published research, please cite:
+
++ Not published yet.
+
+
+## :arrow_double_down: Installation
+
+Install the package from github:
+
+```r
+## install.packages("remotes")
+remotes::install_github("chaoxv/nppr")
+```
+
+## :sparkling_heart: Contributing
+
+We welcome any contributions! By participating in this project you agree to
+abide by the terms outlined in the [Contributor Code of Conduct](CONDUCT.md).
+
+## Use nppr
+
+1. Download ocean productivity data
+
+```{r results=FALSE eval=FALSE}
+library(nppr)
+library(RCurl)
+library(XML)
+library(R.utils)
+library(tidyverse)
+library(lubridate)
+
+# Create an empty folder to save your ocean produtivity files.
+
+yourfolder <- paste0(getwd(), '/', 'vgpm') 
+
+get_npp_vgpm(file.path = yourfolder,
+             grid.size = 'low',
+             time.span = 'monthly',
+             satellite = 'MODIS',
+             mindate = '2016-01-15', 
+             maxdate = '2016-03-15') 
+
+```
+
+2. Read hdf file
+
+```{r results=FALSE eval=FALSE}
+
+yourfile <- paste0(yourfolder, '/vgpm')
+
+read_hdf(file.path = yourfile)    
+
+```
+
+
+

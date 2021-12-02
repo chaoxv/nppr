@@ -50,12 +50,12 @@ get_sst <- function(file.path,
   maxyear <- year(maxdate)
 
   if(time.span == 'monthly'){
-    minday <- yday(mindate) - 31
+    minday <- yday(mindate)
     maxday <- yday(maxdate) + 31
   }
 
   if(time.span == 'dayly'){
-    minday <- yday(mindate) - 10
+    minday <- yday(mindate)
     maxday <- yday(maxdate) + 10
   }
 
