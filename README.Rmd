@@ -17,8 +17,6 @@ knitr::opts_chunk$set(
 
 <img src="https://github.com/chaoxv/figures/blob/main/nppr.png?raw=true" height="200" align="right" /></a>
 
-<!-- badges: end -->
-
 ```{r comment="", echo=FALSE, results='asis'}
 cat(packageDescription('nppr')$Description)
 ```
@@ -101,7 +99,7 @@ match_df(mydat, file.path = yourfolder)
 
 4. Ocean productivity data visualization.
 
-```{r fig.dim = c(7.5, 7.5), warning=FALSE}
+```{r fig.dim = c(7.5, 7.5), warning=FALSE, message=FALSE}
 # Load supporting packages
 
 library(viridis)

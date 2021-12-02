@@ -3,9 +3,7 @@
 
 # nppr
 
-<img src="https://raw.githubusercontent.com/chaoxv/figures/main/nppr.png" height="200" align="right" /></a>
-
-<!-- badges: end -->
+<img src="https://github.com/chaoxv/figures/blob/main/nppr.png?raw=true" height="200" align="right" /></a>
 
 Tools for ocean productivity data downloading, reading, processing and
 visualization. All data are available from
@@ -87,9 +85,7 @@ match_df(mydat, file.path = yourfolder)
 # Load supporting packages
 
 library(viridis)
-#> 载入需要的程辑包：viridisLite
 library(raster)
-#> 载入需要的程辑包：sp
 library(ggplot2)
 library(ggspatial)
 library(rnaturalearth)
@@ -105,7 +101,6 @@ data(nppdata)
                      limits = c(50, 1050))+
   labs(x = 'Longitude', y = 'Latitude',
   fill = expression(NPP*~'('*mg~C~m^-2~d^-1*')'))
-#> Scale on map varies by more than 10%, scale bar may be inaccurate
 ```
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
