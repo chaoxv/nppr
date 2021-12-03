@@ -25,11 +25,12 @@ cat(packageDescription('nppr')$Description)
 ## :writing_hand: Authors
 
 Chao Xu
+`r badger::badge_custom("follow me on", "WeChat", "green", "https://github.com/chaoxv/figures/blob/main/wechat.jpg?raw=true")`
 
 Xiamen University
 
 
-## Installation
+## :arrow_double_down: Installation
 
 You can install the development version of nppr like so:
 
@@ -75,7 +76,7 @@ get_npp_vgpm(file.path = yourfolder,
 
 ```{r eval=FALSE}
 # Use the hdf file you have downloaded yet.
-yourfile <- paste0(yourfolder, '/201601.vgpm')
+yourfile <- paste0(yourfolder, '/201601.hdf')
 read_hdf(file.path = yourfile)    
 
 ```
@@ -101,6 +102,8 @@ match_df(mydat, file.path = yourfolder)
 
 ```{r fig.dim = c(7.5, 7.5), warning=FALSE, message=FALSE}
 # Load supporting packages
+
+
 
 library(viridis)
 library(raster)

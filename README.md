@@ -12,10 +12,11 @@ visualization. All data are available from
 ## :writing_hand: Authors
 
 Chao Xu
+[![](https://img.shields.io/badge/follow%20me%20on-WeChat-green.svg)](https://yulab-smu.top/images/biobabble.jpg)
 
 Xiamen University
 
-## Installation
+## :arrow_double_down: Installation
 
 You can install the development version of nppr like so:
 
@@ -59,7 +60,7 @@ get_npp_vgpm(file.path = yourfolder,
 
 ``` r
 # Use the hdf file you have downloaded yet.
-yourfile <- paste0(yourfolder, '/201601.vgpm')
+yourfile <- paste0(yourfolder, '/201601.hdf')
 read_hdf(file.path = yourfile)    
 ```
 
@@ -83,6 +84,8 @@ match_df(mydat, file.path = yourfolder)
 
 ``` r
 # Load supporting packages
+
+
 
 library(viridis)
 library(raster)
