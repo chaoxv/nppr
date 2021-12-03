@@ -12,7 +12,7 @@ visualization. All data are available from
 ## :writing_hand: Authors
 
 Chao Xu
-[![](https://img.shields.io/badge/follow%20me%20on-WeChat-green.svg)](https://yulab-smu.top/images/biobabble.jpg)
+[![](https://img.shields.io/badge/follow%20me%20on-WeChat-green.svg)](https://github.com/chaoxv/figures/blob/main/wechat.jpg?raw=true)
 
 Xiamen University
 
