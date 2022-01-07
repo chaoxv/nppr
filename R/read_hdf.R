@@ -18,7 +18,7 @@
 
 read_hdf <- function(file.path){
 
-  ori_data <- raster(file.path)
+  ori_data <- raster::raster(file.path)
 
   raster::extent(ori_data) <- c(xmin = -180, xmax = 180, ymin = -90, ymax = 90)
 
