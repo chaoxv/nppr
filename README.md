@@ -9,6 +9,9 @@ Tools for ocean productivity data downloading, reading, processing and
 visualization. All data are available from
 <http://sites.science.oregonstate.edu/ocean.productivity/index.php>.
 
+## Cite as:
+Chao Xu. 2023. nppr: An R package for ocean productivity data downloading, reading, processing and visualization (v1.0.0). Zenodo.
+
 ## :writing_hand: Authors
 
 Chao Xu
