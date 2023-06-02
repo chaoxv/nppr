@@ -26,11 +26,9 @@ read_hdf <- function(file.path){
 
   names(ori_data) <- 'var'
 
-  ori_data[ori_data == -9999] <- NA
-
   new_data <- raster::as.data.frame(ori_data, xy = TRUE) %>%
 
-    na.omit() %>%
+    filter(var != -9999) %>%
 
     mutate(lon = .data$x, lat = .data$y) %>%
 
