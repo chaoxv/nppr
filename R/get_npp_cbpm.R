@@ -8,7 +8,7 @@
 #' @param grid.size The grid size that you choose. There are two grid sizes can be choosed:
 #' 'low'(default): 2160x1080, 'high': 2160x4320.
 #' @param time.span The time span of npp data. There two time spans: 'monthly' represent monthly npp data.
-#' 'dayly' represent 8 days data.
+#' 'daily' represent 8 days data.
 #' @param satellite Choose satellites, 'MODIS', 'VIIRS', and 'SeaWiFS'. The default is 'MODIS'.
 #' @param mindate The minimum date of data you want to download.
 #' @param maxdate The maximum date of data you want to download.
@@ -36,7 +36,7 @@ get_npp_cbpm <- function(file.path,
                          maxdate){
 
   grid <- if_else(grid.size == 'high', '2x4/', '1x2/')
-  time <- if_else(time.span == 'dayly', '8day/', 'monthly/')
+  time <- if_else(time.span == 'daily', '8day/', 'monthly/')
   format <- 'hdf/'
   sate <- if_else(satellite == 'MODIS', 'cbpm2.modis.r2018/',
                     if_else(satellite == 'VIIRS', 'cbpm2.viirs.r2018/', 'cbpm2.s.r2014.gsm.v8/'))
@@ -53,7 +53,7 @@ get_npp_cbpm <- function(file.path,
     maxday <- yday(maxdate)
   }
 
-  if(time.span == 'dayly'){
+  if(time.span == 'daily'){
     minday <- ifelse(yday(mindate) < 9, 1, yday(mindate) - 8)
     maxday <- yday(maxdate)
   }
@@ -97,7 +97,7 @@ get_npp_cbpm <- function(file.path,
       file.rename(., xc_file_rename3(.))
     }
 
-    if(time.span == 'dayly'){
+    if(time.span == 'daily'){
       dir(file.path, full.names = T) %>%
       file.rename(., xc_file_rename4(.))
     }
